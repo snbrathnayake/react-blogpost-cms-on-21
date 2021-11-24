@@ -1,0 +1,81 @@
+.login {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  /* background-image: radial-gradient(circle, #88f8ed, #a6f9ff, #cff8ff, #f0f9ff, #ffffff); */
+}
+
+.loginTitle {
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  font-family: 'Lora', sans-serif;
+}
+
+.loginForm {
+  box-sizing: border-box;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 10px 49px 11px rgba(217, 217, 217, 0.45);
+  -webkit-box-shadow: 0px 10px 49px 11px rgba(217, 217, 217, 0.45);
+  -moz-box-shadow: 0px 10px 49px 11px rgba(217, 217, 217, 0.45);
+}
+
+.loginForm > label {
+  margin: 10px 0;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #333;
+}
+.loginForm > label i{
+  margin-right: 5px;
+}
+
+.loginForm > input {
+  padding: 10px;
+  background: white;
+  border: 1px solid #f4f4f4;
+  border-radius: 2px;
+  outline: none;
+}
+
+.loginForm > input::placeholder {
+  color: #aaaaaa;
+  text-transform: none;
+  /* font-family: "Lora",sans-serif; */
+}
+
+.loginBtn {
+  color: white;
+  background-color: teal;
+  padding: 10px 30px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* .switchLinkButton {
+  
+  display: inline-block;
+  border: none;
+  padding: 10px 20px;
+  color: #222;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: transparent;
+   text-decoration: underline; 
+   border-bottom: 1px solid #222; 
+  font-family: 'Josefin Sans', sans-serif;
+} */
