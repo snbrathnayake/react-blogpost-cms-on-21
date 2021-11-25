@@ -1,7 +1,19 @@
-import React from 'react';
+import {getCategories} from 'http/api';
+import React, {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
 import './sidebar.css';
 
 export default function Sidebar() {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const res = await getCategories();
+      setCategories(res.data);
+    };
+    fetchCategories();
+  }, []);
+
   return (
     <div className='sidebar'>
       <div className='sidebarItem'>
@@ -22,12 +34,11 @@ export default function Sidebar() {
       <div className='sidebarItem'>
         <span className='sidebarTitle'>CATEGORIES</span>
         <ul className='sidebarList'>
-          <li className='sidebarListItem'>life</li>
-          <li className='sidebarListItem'>music</li>
-          <li className='sidebarListItem'>style</li>
-          <li className='sidebarListItem'>sport</li>
-          <li className='sidebarListItem'>tech</li>
-          <li className='sidebarListItem'>cinema</li>
+          {categories.map((category) => (
+            <li className='sidebarListItem' key={category.name}>
+              <Link to={`/?category=${category.name}`}>{category.name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
 

@@ -1,9 +1,14 @@
-import React from 'react';
+import {Context} from 'context/Context';
+import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import './navbar.css';
 
 export default function Navbar() {
-  const user = !true;
+  const {user, dispatch} = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({type: 'LOGOUT'});
+  };
 
   return (
     <div className='nav'>
@@ -27,16 +32,21 @@ export default function Navbar() {
           <li className='navItem'>
             <Link to='/write'>write</Link>
           </li>
-          <li className='navItem'>{user && 'Logout'}</li>
+          <li className='navItem logoutLink' onClick={handleLogout}>
+            {user && 'Logout'}
+          </li>
         </ul>
       </div>
       <div className='navRight'>
         {user ? (
-          <img
-            className='profileImage'
-            src='https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
-            alt='profile'
-          />
+          <>
+            <img
+              className='profileImage'
+              src={user.profileImage}
+              alt={user.username}
+            />
+            <span style={{textTransform: 'capitalize'}}>{user.username}</span>
+          </>
         ) : (
           <ul className='navList'>
             <li className='navItem'>

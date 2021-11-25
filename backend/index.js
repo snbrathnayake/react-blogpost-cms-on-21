@@ -1,6 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
+import path from 'path';
+const __dirname = path.resolve();
+
 import mongodb from './configs/mongo_connect.js';
 import authRouter from './routes/auth.js';
 import userRouter from './routes/users.js';
@@ -12,7 +15,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-
+app.use('/backend/images', express.static(path.join(__dirname, '/backend/images')));
 /**
  * connect to mongo database
  */
@@ -26,7 +29,8 @@ const LocalStorage = multer.diskStorage({
     // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
     // const fileType = file.mimetype.split('/')[1];
     // cb(null, file.fieldname + '-' + uniqueSuffix + '.' + fileType);
-    cb(null, file.originalname);
+    // cb(null, file.originalname);
+    cb(null, req.body.name);
   },
 });
 

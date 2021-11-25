@@ -17,9 +17,8 @@ router.post('/', async (req, res) => {
 
 // GET ALL CATE
 router.get('/', async (req, res) => {
-  console.log('Hello');
+
   try {
-    // const categories = new CategoryModel.find({});
     const categories = await CategoryModel.find({});
     res.status(200).json(categories);
   } catch (err) {

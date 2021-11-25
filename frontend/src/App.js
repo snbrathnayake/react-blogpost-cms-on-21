@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import HomePage from './pages/home-page/HomePage';
@@ -8,9 +8,11 @@ import SettingsPage from './pages/settings-page/SettingsPage';
 import SinglePage from './pages/single-page/SinglePage';
 import ContactPage from './pages/contact-page/ContactPage';
 import WritePage from './pages/write-page/WritePage';
+import {Context} from 'context/Context';
 
 function App() {
-  const user = !true;
+  
+  const {user} = useContext(Context);
 
   return (
     <Router>

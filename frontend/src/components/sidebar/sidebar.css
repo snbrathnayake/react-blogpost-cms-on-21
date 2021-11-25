@@ -58,6 +58,13 @@
   text-transform: capitalize;
   margin: 5px 0;
   cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.sidebarListItem:hover {
+  text-decoration: underline;
+  color: darkcyan;
 }
 
 .sidebarSocial {
