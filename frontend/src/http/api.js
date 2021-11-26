@@ -23,6 +23,15 @@ export const getPostById = (id) => {
   return API.get(`/posts/${id}`);
 };
 
+
+export const updatePost = (id,data) => {
+  return API.put(`/posts/${id}`,data);
+};
+
+export const deletePost = (id) => {
+  return API.delete(`/posts/${id}`);
+};
+
 export const getCategories = () => {
   return API.get('/categories');
 };
@@ -39,4 +48,8 @@ export const getCategories = () => {
 
 export const singin = (data) => {
   return API.post('/auth/login',data);
+};
+
+export const profileUpdate = (data) => {
+  return API.put(`/users/${data.userId}`,data);
 };

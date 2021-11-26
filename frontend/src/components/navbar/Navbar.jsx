@@ -39,14 +39,10 @@ export default function Navbar() {
       </div>
       <div className='navRight'>
         {user ? (
-          <>
-            <img
-              className='profileImage'
-              src={user.profileImage}
-              alt={user.username}
-            />
-            <span style={{textTransform: 'capitalize'}}>{user.username}</span>
-          </>
+          <Link to='/settings'>
+            <img className='profileImage' src={user.profileImage} alt={user.username} />
+            {/* <span style={{textTransform: 'capitalize'}}>{user.username}</span> */}
+          </Link>
         ) : (
           <ul className='navList'>
             <li className='navItem'>

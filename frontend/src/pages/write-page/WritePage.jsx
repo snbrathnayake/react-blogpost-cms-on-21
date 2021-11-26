@@ -24,7 +24,8 @@ export default function WritePage() {
         const filename = Date.now() + file.name;
         data.append('name', filename);
         data.append('file', file);
-        newPost.image = filename;
+
+        newPost.image = `http://localhost:8082/backend/images/${filename}`;
 
         await uploadPostImage(data);
       }

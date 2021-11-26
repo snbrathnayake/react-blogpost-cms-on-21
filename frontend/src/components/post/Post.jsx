@@ -3,12 +3,9 @@ import {Link} from 'react-router-dom';
 import './post.css';
 
 export default function Post({post}) {
-  const buckets3 = 'http://localhost:8082/backend/images/';
-  
-
   return (
     <div className='post'>
-      <img className='postImage' src={buckets3 + post.image} alt={post.title} />
+      <img className='postImage' src={post.image} alt={post.title} />
       <div className='postInfo'>
         <div className='postCategories'>
           {post.categories.map((category, index) => (
